@@ -1,10 +1,12 @@
 # Update Sets 
 
+Remember: different companies do things differently! The below doesn't necessarily apply to every dev team.
+
 ### Update Set Naming Conventions 
 
 Use a consistent naming convention for update sets. 
 
-- **NEVER COMPLETE THE DEFAULT UPDATE SET FOR GLOBAL**
+- Never set the update set for Global Default to complete
 - Create at least one local update set and switch from the Global update set to the local one before beginning work.  
 - At a minimum, update sets must have a unique name that identifies the originating campus organization, concise description, and implementation sequence. A reference to the project requirement is also recommended to ensure traceability to customer requirements such as:  
 org_reference_desc_seq/date 
@@ -12,15 +14,15 @@ org_reference_desc_seq/date
   - reference: External reference number  
   - desc: Short description  
   - seq/date: (optional) Sequence number or version or date 
-  - Example: IET STRY0001234 Incident Hotfix 3 2020.01.12 
+  - Example: DA STRY0001234 Incident Hotfix 3 2020.01.12 
 - The standard date format is YYYY.MM.DD. 
 - Do not use the word “default” anywhere in your update set name 
 
-
 ### Good Practices for Update Sets 
  
-- Never delete an Update Set. 
+- Never delete an Update Set. (Some companies delete them in production though, YMMV)
 - Never re-open previously completed update sets. Create new ones instead. 
+  - Why? If another instance has retrieved your update set already then it will never try to retrieve your newly "updated" update set, resulting in desynced update sets.
 - Never manually merge update sets. Utilize batch functionality instead. 
 - Before completing an update set, review the update set to ensure that the only updates included pertain to the desired work. 
 - Preview update sets before committing them. 
